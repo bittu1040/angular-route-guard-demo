@@ -8,7 +8,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  channelName = '';
+  routeGuardName = '';
 
   constructor(
     private dataService: DataService,
@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
     //   this.channelName = res;
     // });
     this.route.data.subscribe((res) => {
-      this.channelName = res['data'];
+      this.routeGuardName = res['data'];
     });
   }
 }
