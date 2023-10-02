@@ -1,37 +1,42 @@
+/* Base styles for the navigation bar */
 .nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
-  background-color: rgb(253, 222, 253);
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  align-items: center;
 }
 
-.nav .left {
+.nav .left,
+.nav .right {
   display: flex;
   align-items: center;
-  width: 60%;
-  color: purple;
 }
 
-.nav .nav-item {
-  font-size: 20px;
-  font-weight: bold;
-  margin-right: 50px;
-  text-transform: uppercase;
+.nav-item {
+  margin-right: 20px;
   cursor: pointer;
 }
 
-.nav .right {
-  background-color: purple;
-  color: #fff;
-  padding: 5px;
-  border-radius: 4px;
-}
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+  }
 
-.nav .right .nav-item {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
+  .nav .left,
+  .nav .right {
+    margin: 10px 0;
+  }
 
+  .nav-item {
+    margin: 10px 0;
+    background-color: #007bff;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+}
