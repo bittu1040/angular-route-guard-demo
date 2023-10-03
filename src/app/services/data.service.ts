@@ -7,6 +7,6 @@ export class DataService {
   constructor() {}
 
   getData() {
-    return of('resolve router guard').pipe(delay(3000));
+    return of('resolve route guard').pipe(delay(3000));
   }
 }
