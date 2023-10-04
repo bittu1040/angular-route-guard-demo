@@ -14,6 +14,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AboutComponent } from './components/about/about.component';
 import { EditAboutComponent } from './components/edit-about/edit-about.component';
 import { RoleGuard } from './services/role.guard';
+import { AdminComponent } from './components/admin/admin.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
@@ -25,9 +27,10 @@ import { RoleGuard } from './services/role.guard';
     AccessDeniedComponent,
     NotFoundComponent,
     AboutComponent,
-    EditAboutComponent
+    EditAboutComponent,
+    AdminComponent,
   ],
-  providers: [DataService, RoleGuard],
+  providers: [DataService, RoleGuard, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
