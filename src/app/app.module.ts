@@ -11,6 +11,9 @@ import { DataService } from './services/data.service';
 import { ProductsComponent } from './components/products/products.component';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AboutComponent } from './components/about/about.component';
+import { EditAboutComponent } from './components/edit-about/edit-about.component';
+import { RoleGuard } from './services/role.guard';
 
 @NgModule({
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
@@ -21,8 +24,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ProductsComponent,
     AccessDeniedComponent,
     NotFoundComponent,
+    AboutComponent,
+    EditAboutComponent
   ],
-  providers: [DataService],
+  providers: [DataService, RoleGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
